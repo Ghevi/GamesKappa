@@ -3,11 +3,6 @@
 
 void PlayGameAtDifficulty(int difficulty)
 {
-}
-
-
-int main()
-{
 	int LockDigitsCount = 3;
 	int LockDigitsSum = 8;
 	int LockDigitsProduct = 18;
@@ -29,7 +24,7 @@ int main()
 	std::cout << "Your neural link will give you suggestion to find the right code:\n";
 	std::cout << "\n";
 	std::cout << "+ The " << LockDigitsCount << " numbers add up to " << LockDigitsSum << ". \n";
-	std::cout << "+ The " << LockDigitsCount << " numbers multiplication result is " << LockDigitsProduct << ".\n" ;
+	std::cout << "+ The " << LockDigitsCount << " numbers multiplication result is " << LockDigitsProduct << ".\n";
 	std::cout << "\n";
 #pragma endregion
 
@@ -38,9 +33,9 @@ int main()
 	for (int i = 0; i < LockDigitsCount; i++)
 		DisplayedDigits += " # ";
 
-	HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
-	COORD position = {0, 10};
-	SetConsoleCursorPosition(hConsole, position);
+	/*HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
+	COORD position = { 0, 10 };
+	SetConsoleCursorPosition(hConsole, position);*/
 
 	for (int i = 0; i <= (LockDigitsCount * 3) + 1; i++)
 		std::cout << "*";
@@ -70,7 +65,16 @@ int main()
 		std::cout << "The code is correct... -\"Damn, imagine spending so much for a car that has this kind of security\"\n";
 	else
 		std::cout << "The code is incorrect and the police has been called... \"Well, I guess I'm dumber than the mechanism itself\"\n";
-#pragma endregion
 
-	return 0;
+	std::cout << "\n";
+#pragma endregion
+}
+
+
+int main()
+{
+	while(true)
+	{
+		PlayGameAtDifficulty(1);
+	}
 }
